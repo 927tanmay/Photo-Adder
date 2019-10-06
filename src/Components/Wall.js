@@ -1,13 +1,16 @@
 import React,{Component} from 'react';
 import Cards from './Card';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 class Wall extends Component{
     render(){
         return(
 
             <div>
-                <button className="btn"> </button>
+                <Link to="/AddPhoto"><button className="addbtn"> </button></Link>
+                {/* <a className="addbtn" onClick={()=>this.props.add()} href="#AddPhoto"></a> */}
+                {/* <button className="addbtn" onClick={()=>this.props.add()}> </button> */}
             <div className="photo-grid">
                {this.props.posts.map((post,index)=>  <Cards key={index} post={post} onRemove={this.props.onRemove}/> )}
             </div>
@@ -18,7 +21,7 @@ class Wall extends Component{
 
 Wall.propTypes={
     posts: PropTypes.array.isRequired,
-    onRemove: PropTypes.func.isRequired
+    onRemove: PropTypes.func.isRequired,
 };
 
 
