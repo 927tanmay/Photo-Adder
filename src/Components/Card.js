@@ -9,9 +9,10 @@ class Cards extends Component{
         return(
 
 <div>
+  
 <Card className="figure" >
-   
-  <CardImg className="photo" src={this.props.post.imageLink} alt="Card image cap"></CardImg>
+   <img className="photo" src={this.props.post.imageLink}></img>
+  {/* <CardImg className="photo" src={this.props.post.imageLink} alt="Card image cap"></CardImg> */}
   <CardBody>
     <CardText className="desc">{this.props.post.description}</CardText>
     <div className="button-container">

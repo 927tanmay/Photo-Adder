@@ -12,7 +12,11 @@ class Wall extends Component{
                 {/* <a className="addbtn" onClick={()=>this.props.add()} href="#AddPhoto"></a> */}
                 {/* <button className="addbtn" onClick={()=>this.props.add()}> </button> */}
             <div className="photo-grid">
-               {this.props.posts.map((post,index)=>  <Cards key={index} post={post} onRemove={this.props.onRemove}/> )}
+               {this.props.posts
+                .sort(function(x,y){
+                    return y.id-x.id
+                })
+                .map((post,index)=>  <Cards key={index} post={post} onRemove={this.props.onRemove}/> )}
             </div>
             </div>
        )
