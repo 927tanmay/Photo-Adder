@@ -16,7 +16,10 @@ class Cards extends Component{
   <CardBody>
     <CardText className="desc">{this.props.post.description}</CardText>
     <div className="button-container">
-    <Button className="remove"  onClick={()=>{this.props.onRemove(this.props.post)}}>Remove</Button>
+    <Button className="remove"  onClick={()=>{
+      this.props.removePost(this.props.index)
+
+    }}>Remove</Button>
     </div>        
   </CardBody>
  
@@ -27,8 +30,8 @@ class Cards extends Component{
 }
 
 Cards.propTypes={
-  post:PropTypes.object.isRequired,
-  onRemove:PropTypes.func.isRequired
+  // post:PropTypes.object.isRequired,
+  // onRemove:PropTypes.func.isRequired
 }
 
 

@@ -22,8 +22,10 @@ class AddPhoto extends Component{
                 description : desc,
                 ImageLink : link
             };
+            this.props.addPost(arr)
+            this.props.onHistory.push('/')
 
-            {this.props.onAdd(arr)}
+            // {this.props.onAdd(arr)}
         }
         
     }
@@ -34,7 +36,7 @@ class AddPhoto extends Component{
     render(){
         return(
             <div>
-                <h1>Photowall</h1>
+                {/* <h1>Photowall</h1> */}
                 <div>
                 <Form className="form" inline onSubmit={this.handleSubmit} >
                 <FormGroup>

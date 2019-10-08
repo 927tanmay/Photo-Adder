@@ -16,7 +16,7 @@ class Wall extends Component{
                 .sort(function(x,y){
                     return y.id-x.id
                 })
-                .map((post,index)=>  <Cards key={index} post={post} onRemove={this.props.onRemove}/> )}
+                .map((post,index)=>  <Cards key={index} post={post} {...this.props} index={index}/> )}
             </div>
             </div>
        )
@@ -25,7 +25,7 @@ class Wall extends Component{
 
 Wall.propTypes={
     posts: PropTypes.array.isRequired,
-    onRemove: PropTypes.func.isRequired,
+    // onRemove: PropTypes.func.isRequired,
 };
 
 
