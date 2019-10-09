@@ -5,6 +5,8 @@ import AddPhoto from './addPhoto';
 import {Route} from 'react-router-dom';
 import {removePost} from '../redux/action';
 import {Link} from 'react-router-dom';
+import Single from './single';
+
 class Mains extends Component{
     constructor(){
         super();
@@ -50,8 +52,7 @@ class Mains extends Component{
         console.log(this.props.posts);
         return(
               <div>
-                    <Link to="/"
-                    ><h1>Photowall</h1></Link>
+                    <Link to="/" ><h1>Photowall</h1></Link>
 
                     <Route exact path="/" render={()=>(
                         <div>
@@ -77,6 +78,17 @@ class Mains extends Component{
 
                          </div>
                     )}/>}
+
+                    <Route path='/single:id' render={(params)=>(
+                       <div>
+                           <Single {...this.props} {...params}/>
+                       </div>    
+                       
+                    )}/>
+
+
+
+
             </div>
         )
     }
